@@ -6,5 +6,8 @@ This is a basic [FastAPI](https://fastapi.tiangolo.com/) python application for 
 
 No executables are provided in this repository. The current syntax of the script is designed to work with the ATRAC3 tool included with the Sony PSP SDK. Other executables such as [atracdenc](https://github.com/dcherednik/atracdenc) can be easily substituted
 
-To build atracapi as a docker container, provide an encoder executable in the root of this repository with the name `psp_at3tool.exe` and run `docker build .` 
+You'll need these executables:
+- `at3tool`: the Linux version, not windows version
+- `libatrac.so.1.2.0`
 
+To build atracapi as a docker container, provide aforementioned binaries and run `docker build -t szclsya/atrac-api .`. Then you can run the server via the provided `compose.yml` with docker compose.

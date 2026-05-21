@@ -1,0 +1,7 @@
+services:
+  atrac-api:
+    container_name: atrac-api
+    image: szclsya/atrac-api
+    restart: unless-stopped
+    ports:
+      - 5000:5000

@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y gcc-multilib
 COPY libatrac.so.1.2.0 /usr/local/lib
 RUN ldconfig
 RUN ln -s /usr/local/lib/libatrac.so.1 /usr/local/lib/libatrac.so
-ENV LD_LIBRARY_PATH /usr/local/lib
-COPY at3tool /usr/bin/at3tool
+ENV LD_LIBRARY_PATH=/usr/local/lib
+COPY --chmod=0755 at3tool /usr/bin/at3tool
 
 COPY . /app
 WORKDIR /app
